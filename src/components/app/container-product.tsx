@@ -15,37 +15,35 @@ const ContainerProductMemo = () => {
   const { data, refetch } = useQuery(GET_PRODUCTS);
   return (
     <>
-      <div className="flex flex-1 flex-col gap-4 p-4 pt-0 mt-5">
-        <SectionHead
-          title="Newest Products"
-          description="Discover our latest products, curated to enhance your lifestyle."
-          actions={
-            !profile ? <ModalLogin /> : <ModalCreateProduct refetch={refetch} />
-          }
-        />
-        <div className="grid grid-cols-5 gap-5 mb-5">
-          {data?.getAllProduct.slice(0, 5).map((product: any, index: number) => (
-            <ProductDetail key={index} data={product} refetch={refetch}>
-              <button>
-                <Product title={product.name} price={`$` + product.price} />
-              </button>
-            </ProductDetail>
-          ))}
-        </div>
-        <SectionHead
-          title="See our products"
-          description="Explore our diverse range of products, crafted to meet your needs
+      <SectionHead
+        title="Newest Products"
+        description="Discover our latest products, curated to enhance your lifestyle."
+        actions={
+          !profile ? <ModalLogin /> : <ModalCreateProduct refetch={refetch} />
+        }
+      />
+      <div className="grid grid-cols-5 gap-5 mb-5">
+        {data?.getAllProduct.slice(0, 5).map((product: any, index: number) => (
+          <ProductDetail key={index} data={product} refetch={refetch}>
+            <button>
+              <Product title={product.name} price={`$` + product.price} />
+            </button>
+          </ProductDetail>
+        ))}
+      </div>
+      <SectionHead
+        title="See our products"
+        description="Explore our diverse range of products, crafted to meet your needs
               and preferences."
-        />
-        <div className="grid grid-cols-8 gap-5 flex-wrap">
-          {data?.getAllProduct.map((product: any, index: number) => (
-            <ProductDetail key={index} data={product} refetch={refetch}>
-              <button>
-                <Product title={product.name} price={`$` + product.price} />
-              </button>
-            </ProductDetail>
-          ))}
-        </div>
+      />
+      <div className="grid grid-cols-8 gap-5 flex-wrap">
+        {data?.getAllProduct.map((product: any, index: number) => (
+          <ProductDetail key={index} data={product} refetch={refetch}>
+            <button>
+              <Product title={product.name} price={`$` + product.price} />
+            </button>
+          </ProductDetail>
+        ))}
       </div>
     </>
   );

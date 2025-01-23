@@ -26,7 +26,7 @@ const ModalLoginMemo = () => {
             type="email"
             name={"email"}
             label={"Email"}
-            placeholder={"Insert email"}
+            placeholder={"default: admin@admin.com"}
             rules={{
               required: "Email is required",
               pattern: { value: /^\S+@\S+$/i, message: "Invalid email" },
@@ -36,7 +36,7 @@ const ModalLoginMemo = () => {
             type="password"
             name={"password"}
             label={"Password"}
-            placeholder={"Insert password"}
+            placeholder={"default: admin123"}
             rules={{ required: "Password is required" }}
           />
         </Form>

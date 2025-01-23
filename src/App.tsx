@@ -10,7 +10,7 @@ function App() {
   return (
     <main>
       <Tabs defaultValue="product" className="w-3/4 m-auto">
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between mb-5">
           <TabsList>
             <TabsTrigger value="product">Product</TabsTrigger>
             <TabsTrigger value="user">Users</TabsTrigger>
