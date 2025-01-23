@@ -14,7 +14,10 @@ const FormCreateProductMemo = ({ form }: FormCreateProductProps) => {
         name={"name"}
         label={"Name"}
         placeholder={"Insert product name"}
-        rules={{ required: "Name is required" }}
+        rules={{
+          required: "Name is required",
+          maxLength: { message: "Max 10 character", value: 10 },
+        }}
       />
       <FormController
         type="text"
